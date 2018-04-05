@@ -13,15 +13,15 @@ $(document).ready(function(){
             success:function(data){
             $("#result").empty();
             for (var i = 0; i < data.length; i++) {
-             var items = data[i];
-             var li = $('<li></li>');
-             li.attr('id',items.id);
-             var del = $("<button>delete</button>");
-             del.attr('value',items.id).attr('id','delete');
-             del.click(deletefunc);
-             li.text(`編碼:${items.id} 曲名:${items.name} 作者:${items.author}`);
-             li.append(del);
-             $("#result").append(li);
+               var items = data[i];
+               var tr = $('<tr></tr>');
+               tr.attr('id',items.id);
+               var del = $("<button class='btn btn-outline-primary'>delete</button>");
+               del.attr('value',items.id).attr('id','delete');
+               del.click(deletefunc);
+               tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
+               tr.append($("<td></td>").append(del));
+               $("#result").append(tr);
             }
             },
             error:function(){
@@ -39,15 +39,15 @@ $(document).ready(function(){
             success:function(data){
             $("#result").empty();
             for (var i = 0; i < data.length; i++) {
-             var items = data[i];
-             var tr = $('<tr></tr>');
-             tr.attr('id',items.id);
-             var del = $("<button class='btn btn-outline-primary'>delete</button>");
-             del.attr('value',items.id).attr('id','delete');
-             del.click(deletefunc);
-             tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
-             tr.append($("<td></td>").append(del));
-             $("#result").append(tr);
+               var items = data[i];
+               var tr = $('<tr></tr>');
+               tr.attr('id',items.id);
+               var del = $("<button class='btn btn-outline-primary'>delete</button>");
+               del.attr('value',items.id).attr('id','delete');
+               del.click(deletefunc);
+               tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
+               tr.append($("<td></td>").append(del));
+               $("#result").append(tr);
             }
             },
             error:function(){
