@@ -44,7 +44,7 @@ $(document).ready(function(){
             contentType: "application/json",
             data:data,
             success:function(data,textStatus,jqXHR){
-                $("#result").html(data)
+                $("#result").html("Add "+data.name)
             },
             error:function(xhr,textStatus){
                 $("#result").html("ID already exist")
