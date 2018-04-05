@@ -46,7 +46,7 @@ $(document).ready(function(){
              del.attr('value',items.id).attr('id','delete');
              del.click(deletefunc);
              tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
-             tr.append(del);
+             tr.append($("<td></td>").append(del));
              $("#result").append(tr);
             }
             },
