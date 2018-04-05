@@ -29,6 +29,32 @@ $(document).ready(function(){
             }
         })
     })
+
+    $("#getAll").click(function(){
+        $.ajax({
+            url:'/api/find',
+            type:'GET',
+            timeout:5000,
+            dataType:'json',
+            success:function(data){
+            $("#result").empty();
+            for (var i = 0; i < data.length; i++) {
+             var items = data[i];
+             var tr = $('<tr></tr>');
+             tr.attr('id',items.id);
+             var del = $("<button class='btn btn-outline-primary'>delete</button>");
+             del.attr('value',items.id).attr('id','delete');
+             del.click(deletefunc);
+             tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
+             tr.append(del);
+             $("#result").append(tr);
+            }
+            },
+            error:function(){
+                $("#result").html('0 result')
+            }
+        })
+    })
 //POST方法
     $("#post").click(function(){
       var data = JSON.stringify({

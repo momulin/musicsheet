@@ -2,21 +2,38 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="./js/libs/bootstrap/css/bootstrap.min.css">
 </head>
   <body>
-    <p>Music Sheet</p>
-    <div>
+    <p class="bg-primary text-white">Music Sheet</p>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
       <input id="id" name="name" type="text" placeholder="songid"/>
       <input id="name" name="name" type="text" placeholder="songname"/>
       <input id="author" name="name" type="text" placeholder="author"/>
-      <button id="post">Add</button>
-    </div>
-    <p>Search</p>
+      <button id="post" class="btn btn-outline-primary">Add</button>
+    </nav>
+    <hr>
+    <p class="bg-info text-white">Search</p>
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <input id="findname" name="name" type="text" placeholder="songname"/>
-    <button id="get">Search</button>
-    <ol id="result"></ol>
+    <button id="get" class="btn btn-outline-primary">Search</button>
+    <button id="getAll" class="btn btn-outline-primary">All</button>
+  </nav>
+    <hr>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>SongName</th>
+          <th>Author</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
 
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/index.js"></script>
 
   </body>

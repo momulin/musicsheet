@@ -41,6 +41,16 @@ router.route('/delete/:id').delete((req,res)=>{
   }).catch((e)=>res.status(404).send());
 });
 
+
+router.route('/find').get((req,res)=>{
+  MusicSheet.find().then((data)=>{
+    if(!data[0]){
+      res.status(404).send();
+    }
+    res.send(data);
+  }).catch((e)=>res.status(404).send());
+});
+
 router.route('/find/:name').get((req,res)=>{
   var name = new RegExp(decodeURI(req.params.name), 'i');
   MusicSheet.find({name}).then((data)=>{
