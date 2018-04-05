@@ -11,7 +11,7 @@ var userSchema = new mongoose.Schema({
       type:String,
       require:true
   },
-  auther:{
+  author:{
         type:String,
         required:true
   }
