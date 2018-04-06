@@ -43,7 +43,7 @@ router.route('/delete/:id').delete((req,res)=>{
 
 
 router.route('/find').get((req,res)=>{
-  MusicSheet.find().then((data)=>{
+  MusicSheet.find().sort({id : 'asc'}).then((data)=>{
     if(!data[0]){
       res.status(404).send();
     }
