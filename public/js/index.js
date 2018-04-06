@@ -1,5 +1,17 @@
 
-
+var additem = function(items){
+  var tr = $('<tr></tr>');
+  tr.attr('id',items._id);
+  var del = $("<button class='btn btn-outline-primary'>delete</button>");
+  del.attr('value',items._id).attr('id','delete');
+  del.click(deletefunc);
+  tr.append($("<td></td>").text(items.id));
+  tr.append($("<td></td>").text(items.name));
+  tr.append($("<td></td>").text(items.auther));
+  // tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
+  tr.append($("<td></td>").append(del));
+  $("#result").append(tr);
+};
 
 $(document).ready(function(){
     //GET方法
@@ -13,15 +25,7 @@ $(document).ready(function(){
             success:function(data){
             $("#result").empty();
             for (var i = 0; i < data.length; i++) {
-               var items = data[i];
-               var tr = $('<tr></tr>');
-               tr.attr('id',items.id);
-               var del = $("<button class='btn btn-outline-primary'>delete</button>");
-               del.attr('value',items.id).attr('id','delete');
-               del.click(deletefunc);
-               tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
-               tr.append($("<td></td>").append(del));
-               $("#result").append(tr);
+               additem(data[i]);
             }
             },
             error:function(){
@@ -39,15 +43,7 @@ $(document).ready(function(){
             success:function(data){
             $("#result").empty();
             for (var i = 0; i < data.length; i++) {
-               var items = data[i];
-               var tr = $('<tr></tr>');
-               tr.attr('id',items.id);
-               var del = $("<button class='btn btn-outline-primary'>delete</button>");
-               del.attr('value',items.id).attr('id','delete');
-               del.click(deletefunc);
-               tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
-               tr.append($("<td></td>").append(del));
-               $("#result").append(tr);
+              additem(data[i]);
             }
             },
             error:function(){
@@ -70,7 +66,11 @@ $(document).ready(function(){
             contentType: "application/json",
             data:data,
             success:function(data,textStatus,jqXHR){
-                $("#result").html("Add "+data.name)
+              $("#result").empty();
+              additem(data);
+              $("#id").val("");
+              $("#name").val("");
+              $("#auther").val("");
             },
             error:function(xhr,textStatus){
                 $("#result").html("ID already exist")
@@ -111,16 +111,14 @@ $(document).ready(function(){
 
 
 var deletefunc = function(){
-  console.log("del");
+  var delval = $(this).val();
     $.ajax({
-        url:'/api/delete/'+ $(this).val(),
+        url:'/api/delete/'+ delval,
         type:'DELETE',
         timeout:5000,
         dataType:'json',
         success:function(data,textStatus,jqXHR){
-          console.log(data.id);
-            $("#"+data.id).remove();
-            console.log($("li#delete"));
+            $("#"+data._id).remove();
         },
         error:function(xhr,textStatus){
             $("#result").html(textStatus)

@@ -31,8 +31,8 @@ router.route('/add').post((req,res)=>{
 });
 
 router.route('/delete/:id').delete((req,res)=>{
-  var id = req.params.id;
-  MusicSheet.findOneAndRemove({id}).then((data)=>{
+  var id = mongoose.Types.ObjectId(req.params.id);
+  MusicSheet.findByIdAndRemove(id).then((data)=>{
     if(!data){
         return res.status(404).send();
     }
