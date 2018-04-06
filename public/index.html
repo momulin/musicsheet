@@ -8,15 +8,17 @@
 </head>
   <body>
       <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#myModal">Add</button>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-          <button class="btn btn-outline-primary"  data-toggle="modal" data-target="#myModal">Add</button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <input class="form-control mr-sm-0" id="findname" name="name" type="text" placeholder="songname"/>
-            <button class="btn btn-outline-primary" id="get">Search</button>
-            <button class="btn btn-outline-primary" id="getAll">All</button>
-          </div>
+            <!-- <div class="form-inline my-2 my-lg-0"> -->
+              <input class="form-control mr-sm-2" id="findname" name="name" type="text" placeholder="songname"/>
+              <button class="btn btn-outline-primary my-2" id="get">Search</button>
+              <button class="btn btn-outline-primary my-2" id="getAll">All</button>
+            </div>
+          <!-- </div> -->
       </nav>
 
       <!-- Modal -->
