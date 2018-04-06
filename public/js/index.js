@@ -7,7 +7,7 @@ var additem = function(items){
   del.click(deletefunc);
   tr.append($("<td></td>").text(items.id));
   tr.append($("<td></td>").text(items.name));
-  tr.append($("<td></td>").text(items.auther));
+  tr.append($("<td></td>").text(items.author));
   // tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
   tr.append($("<td></td>").append(del));
   $("#result").append(tr);
@@ -70,7 +70,7 @@ $(document).ready(function(){
               additem(data);
               $("#id").val("");
               $("#name").val("");
-              $("#auther").val("");
+              $("#author").val("");
             },
             error:function(xhr,textStatus){
                 $("#result").html("ID already exist")
