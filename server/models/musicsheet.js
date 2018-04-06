@@ -9,10 +9,10 @@ var userSchema = new mongoose.Schema({
   },
   name:{
       type:String,
-      require:true
+      required:true
   },
   author:{
-        type:String
+      type:String
   }
 });
 

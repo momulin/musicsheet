@@ -90,7 +90,7 @@ $(document).ready(function(){
               $("#author").val("");
             },
             error:function(xhr,textStatus){
-                $("#result").html("ID already exist")
+                $("#result").html("Error")
             }
         })
     })
