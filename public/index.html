@@ -7,10 +7,13 @@
   <link rel="stylesheet" href="./js/libs/bootstrap/css/bootstrap.min.css">
 </head>
   <body>
-      <nav class="navbar fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+      <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
           <button class="btn btn-outline-primary"  data-toggle="modal" data-target="#myModal">Add</button>
-          <div class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" id="findname" name="name" type="text" placeholder="songname"/>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <input class="form-control mr-sm-0" id="findname" name="name" type="text" placeholder="songname"/>
             <button class="btn btn-outline-primary" id="get">Search</button>
             <button class="btn btn-outline-primary" id="getAll">All</button>
           </div>
@@ -39,21 +42,6 @@
   </div>
 </div>
 
-    <!-- <p class="bg-primary text-white">Music Sheet</p>
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-      <input id="id" class="form-control" type="text" placeholder="songid"/>
-      <input id="name" class="form-control" type="text" placeholder="songname"/>
-      <input id="author" class="form-control" type="text" placeholder="author"/>
-      <button id="post" class="btn btn-outline-primary">Add</button>
-    </nav>
-    <hr>
-    <p class="bg-info text-white">Search</p>
-      <nav class="navbar navbar-expand-sm bg-light navbar-light">
-    <input id="findname" class="form-control" name="name" type="text" placeholder="songname"/>
-    <button id="get" class="btn btn-outline-primary">Search</button>
-    <button id="getAll" class="btn btn-outline-primary">All</button>
-  </nav>
-    <hr> -->
     <div style="overflow-x:auto;">
     <table class="table">
       <thead>

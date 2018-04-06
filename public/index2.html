@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="./js/libs/bootstrap/css/bootstrap.min.css">
+</head>
+  <body>
+    <p class="bg-primary text-white">Music Sheet</p>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light">
+      <input id="id" class="form-control" type="text" placeholder="songid"/>
+      <input id="name" class="form-control" type="text" placeholder="songname"/>
+      <input id="author" class="form-control" type="text" placeholder="author"/>
+      <button id="post" class="btn btn-outline-primary">Add</button>
+    </nav>
+    <hr>
+    <p class="bg-info text-white">Search</p>
+      <nav class="navbar navbar-expand-sm bg-light navbar-light">
+    <input id="findname" class="form-control" name="name" type="text" placeholder="songname"/>
+    <button id="get" class="btn btn-outline-primary">Search</button>
+    <button id="getAll" class="btn btn-outline-primary">All</button>
+  </nav>
+    <hr>
+    <div style="overflow-x:auto;">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>SongName</th>
+          <th>Author</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="result"></tbody>
+    </table>
+
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>
+    <script src="/js/libs/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/index.js"></script>
+
+  </body>
+</html>
