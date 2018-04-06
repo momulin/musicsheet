@@ -4,7 +4,7 @@ var additem = function(items){
   tr.attr('id',items._id);
   var del = $("<button class='btn btn-outline-primary'>delete</button>");
   del.attr('value',items._id).attr('id','delete');
-  del.click(deletefunc);
+  del.click(deleteitem);
   tr.append($("<td></td>").text(items.id));
   tr.append($("<td></td>").text(items.name));
   tr.append($("<td></td>").text(items.author));
@@ -12,6 +12,23 @@ var additem = function(items){
   tr.append($("<td></td>").append(del));
   $("#result").append(tr);
 };
+
+var deleteitem = function(){
+  var delval = $(this).val();
+    $.ajax({
+        url:'/api/delete/'+ delval,
+        type:'DELETE',
+        timeout:5000,
+        dataType:'json',
+        success:function(data,textStatus,jqXHR){
+            $("#"+data._id).remove();
+        },
+        error:function(xhr,textStatus){
+            $("#result").html(textStatus)
+        }
+    })
+};
+
 
 $(document).ready(function(){
     //GET方法
@@ -77,51 +94,8 @@ $(document).ready(function(){
             }
         })
     })
-//PUT方法
-    $("#put").click(function(){
-        $.ajax({
-            url:'http://localhost:8080/product/1/?name=测试PUT&age=22',
-            type:'PUT',
-            timeout:5000,
-            dataType:'text',
-            success:function(data,textStatus,jqXHR){
-                $("#result").html(data)
-            },
-            error:function(xhr,textStatus){
-                $("#result").html(textStatus)
-            }
-        })
-    })
-// //DELETE方法
-//     $("#delete").click(function(){
-//         $.ajax({
-//             url:'http://localhost:3000/api/delete/'+ $(this).val(),
-//             type:'DELETE',
-//             timeout:5000,
-//             dataType:'text',
-//             success:function(data,textStatus,jqXHR){
-//                 $(this).parent().remove();
-//             },
-//             error:function(xhr,textStatus){
-//                 $("#result").html(textStatus)
-//             }
-//         })
-// })
+
+    $('#myModal').on('shown.bs.modal', function() {
+        $('#id').focus();
+    });
 });
-
-
-var deletefunc = function(){
-  var delval = $(this).val();
-    $.ajax({
-        url:'/api/delete/'+ delval,
-        type:'DELETE',
-        timeout:5000,
-        dataType:'json',
-        success:function(data,textStatus,jqXHR){
-            $("#"+data._id).remove();
-        },
-        error:function(xhr,textStatus){
-            $("#result").html(textStatus)
-        }
-    })
-};
