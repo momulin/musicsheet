@@ -104,7 +104,7 @@ $(document).ready(function(){
         })
     });
 
-    $('#myModal').on('shown.bs.modal', function() {
+    $('#modalAdd').on('shown.bs.modal', function() {
         $('#id').focus();
     });
 
