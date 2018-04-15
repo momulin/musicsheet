@@ -4,175 +4,54 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-<<<<<<< HEAD
-=======
   <meta name="mobile-web-app-capable" content="yes">
->>>>>>> 7fb6be8... add full screen
   <link rel="stylesheet" href="./js/libs/bootstrap/css/bootstrap.min.css">
-<<<<<<< HEAD
-  <link rel="Shortcut Icon" type="image/x-icon" href="/img/musicsheet.ico" />
-=======
   <link rel="stylesheet" href="./css/index.css">
-<<<<<<< HEAD
-  <link rel="Shortcut Icon" type="image/x-icon" href="./img/musicsheet.ico" />
->>>>>>> cbd1dbb... Add flolat table header
-=======
-  <!-- <link rel="Shortcut Icon" type="image/x-icon" href="./img/favicon.ico" /> -->
->>>>>>> ae30c43... Add favicon
+  <link rel="Shortcut Icon" type="image/x-icon" href="./img/icons/favicon.ico">
+
+  <link rel="apple-touch-icon" href="./img/icons/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/icons/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="./img/icons/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="./img/icons/touch-icon-ipad-retina.png" />
+
   <title>Music Sheet</title>
 </head>
   <body>
-<<<<<<< HEAD
-      <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <form>
-      <div class="modal-header">
-        <h4 class="modal-title">Add New Sheet</h4>
-      </div>
-      <div class="modal-body">
-          <input id="id" class="form-control" type="text" placeholder="songid"/>
-          <input id="name" class="form-control" type="text" placeholder="songname"/>
-          <input id="author" class="form-control" type="text" placeholder="author"/>
-      </div>
-      <div class="modal-footer">
-        <button id="post" type="submit" class="btn btn-outline-primary" data-dismiss="modal">Add</button>
-        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-      </div>
-     </form>
-    </div>
-=======
     <!-- navbar -->
-<<<<<<< HEAD
-      <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
-=======
-<<<<<<< HEAD
-      <nav class="navbar navbar-expand-sm fixed-bottom navbar-light" style="background-color: #e3f2fd;">
->>>>>>> 11f9b6a... UI change
-
-<<<<<<< HEAD
-        <div class="navbar-header">
-          <form class="form-inline prevent-form">
-            <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get" type="submit">Search</button>
-            <input class="form-control-sm mr-2 mt-2" id="findname" name="name" type="text" placeholder="songname"/>
-          </form>
-        </div>
->>>>>>> dd49d3d... remake delete
-
-<<<<<<< HEAD
-  </div>
-</div>
-=======
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-=======
-        <!-- <div class="navbar-header"> -->
-          <!-- <form class="prevent-form"> -->
-            <button class="btn btn-outline-primary mr-1 mt-2" id="get" type="submit">Find</button>
-            <input class="form-control-sm mt-2" style="width:50%" id="findname" name="name" type="text" placeholder="songname"/>
-          <!-- </form> -->
-=======
       <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
           <form class="prevent-form">
             <button class="mt-2" type="submit" id="get" style="border:none; outline:none; background-color: #e3f2fd;"><img src="/img/search.gif"></button>
             <input class="form-control-sm mt-2" id="findname" name="name" type="text" placeholder="songname"/>
           </form>
->>>>>>> c7f18f7... UI change
         <!-- </div> -->
         <button class="navbar-toggler ml-auto float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> 7ede93a... bug fix
           <span class="navbar-toggler-icon"></span>
         </button>
+
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<<<<<<< HEAD
-                <input class="form-control mr-2 mt-2" id="findname" name="name" type="text" placeholder="songname"/>
-<<<<<<< HEAD
-=======
-                <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get" type="submit">Search</button>
->>>>>>> 3325595... Add prevent form
-                <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button>
-                <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get">Search</button>
-=======
                <div class="ml-auto">
                 <button class="btn btn-outline-primary navbar-btn mt-2 float-right" data-toggle="modal" data-target="#modalAdd">Add</button>
                 <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalPatch">Edit</button>
                 <button class="btn btn-outline-danger navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalDel" id="">Delete</button>
 
               </div>
->>>>>>> 57c01c5... remake delete
             </div>
       </nav>
->>>>>>> edad4cf... Add prevent form
 
 <!-- table -->
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  <div style="overflow-x:auto;">
-    <table class="table">
-=======
-  <div style="overflow-x:auto; margin-bottom:50px;">
-    <table class="table table-fixed">
->>>>>>> 33337c8... table view fixed
-=======
-=======
->>>>>>> dd49d3d... remake delete
-  <div style="overflow-x:auto; margin-bottom:50px;">
-    <table class="table table-fixed">
-=======
-    <table class="table table-hover" >
->>>>>>> 8be5c45... add table hover
-<<<<<<< HEAD
->>>>>>> 5eaa477... add table hover
-=======
-=======
     <table class="table" >
->>>>>>> 57c01c5... remake delete
->>>>>>> dd49d3d... remake delete
       <thead>
-        <tr id="floattable">
+        <tr>
           <th>Id</th>
-          <th>SongName</th>
+          <th>Name</th>
           <th>Author</th>
         </tr>
       </thead>
       <tbody id="result"></tbody>
     </table>
-  </div>
 
-<!-- navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
-    <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#myModal">Add</button>
 
-<<<<<<< HEAD
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <input class="form-control mr-2 mt-2" id="findname" name="name" type="text" placeholder="songname"/>
-            <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button>
-            <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get">Search</button>
-        </div>
-  </nav>
-=======
-<<<<<<< HEAD
-  <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-<div class="modal-dialog">
-
-<!-- Modal content-->
-<div class="modal-content">
-  <form>
-  <div class="modal-header">
-    <h4 class="modal-title">Add New Sheet</h4>
-  </div>
-  <div class="modal-body">
-      <input id="id" class="form-control" type="text" placeholder="songid"/>
-      <input id="name" class="form-control" type="text" placeholder="songname"/>
-      <input id="author" class="form-control" type="text" placeholder="author"/>
-=======
   <!-- Add Modal -->
 <div id="modalAdd" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -193,7 +72,6 @@
       </div>
      </form>
     </div>
->>>>>>> 57c01c5... remake delete
   </div>
 </div>
 
@@ -216,9 +94,6 @@
 </div>
 </div>
 
-<<<<<<< HEAD
->>>>>>> dd49d3d... remake delete
-=======
 <!-- Patch Modal -->
 <div id="modalPatch" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -242,12 +117,6 @@
   </div>
 </div>
 
-<<<<<<< HEAD
->>>>>>> 4db2473... Add Patch route and UI
-
-
-=======
->>>>>>> 99a4a79... UI change
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/index.js"></script>

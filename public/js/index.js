@@ -22,6 +22,7 @@ var addTrClass = function(){
 };
 
 
+
 $(document).ready(function(){
     //GET方法
     $("#get").click(function(){
@@ -72,6 +73,7 @@ $(document).ready(function(){
 
     $("#delete").click(function(){
       var delval = $("."+tableclass).attr("value");
+      if(delval != undefined){
         $.ajax({
             url:'/api/delete/'+ delval,
             type:'DELETE',
@@ -84,6 +86,7 @@ $(document).ready(function(){
                 $("#result").html(textStatus)
             }
         })
+      }
     });
 
     $("#patch").click(function(){
@@ -132,11 +135,8 @@ $(document).ready(function(){
         $('#Patch_author').val(selectAuthor);
     });
 
-<<<<<<< HEAD
-=======
     $('.prevent-form').on('submit',function(e){
       e.preventDefault();
     });
 
->>>>>>> 57c01c5... remake delete
 });
