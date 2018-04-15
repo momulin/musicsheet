@@ -2,6 +2,10 @@ require('./config/config');
 const path = require('path');
 const express = require('express');
 const {MusicSheet} = require('./models/musicsheet');
+<<<<<<< HEAD
+=======
+const {botrouter} = require('./linebot/bot');
+>>>>>>> da31b86... Add line bot
 const _ = require('lodash');
 var {mongoose} = require('./db/mongoose');
 var bodyParser = require('body-parser');
