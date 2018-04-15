@@ -3,8 +3,8 @@ const path = require('path');
 const express = require('express');
 const {MusicSheet} = require('./models/musicsheet');
 var {mongoose} = require('./db/mongoose');
-
 var bodyParser = require('body-parser');
+var favicon = require('serve-favicon');
 var app = express();
 
 const publicpath = path.join(__dirname,'../public');
@@ -12,9 +12,8 @@ var router = express.Router();
 var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
-
+app.use(favicon(publicpath + "/img/favicon.ico"));
 app.use(express.static(publicpath));
-
 
 router.route('/add').post((req,res)=>{
   var musicsheet = new MusicSheet({
