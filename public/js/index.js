@@ -1,5 +1,7 @@
 
 var tableclass = 'table-info';
+var selectId,selectName,selectAuthor;
+
 
 var additem = function(items){
   var tr = $('<tr></tr>');
@@ -20,6 +22,9 @@ var additem = function(items){
 
 var addTrClass = function(){
   $(this).addClass(tableclass).siblings().removeClass(tableclass);
+  selectId = $("."+tableclass+" td:nth-child(1)").text();
+  selectName = $("."+tableclass+" td:nth-child(2)").text();
+  selectAuthor = $("."+tableclass+" td:nth-child(3)").text();
 };
 
 
@@ -64,9 +69,9 @@ $(document).ready(function(){
 //POST方法
     $("#post").click(function(){
       var data = JSON.stringify({
-                    id:$("#id").val(),
-                    name:$("#name").val(),
-                    author:$("#author").val()
+                    id:$("#Add_id").val(),
+                    name:$("#Add_name").val(),
+                    author:$("#Add_author").val()
                   });
         $.ajax({
             url:"/api/add/",
@@ -78,9 +83,9 @@ $(document).ready(function(){
             success:function(data,textStatus,jqXHR){
               $("#result").empty();
               additem(data);
-              $("#id").val("");
-              $("#name").val("");
-              $("#author").val("");
+              $("#Add_id").val("");
+              $("#Add_name").val("");
+              $("#Add_author").val("");
             },
             error:function(xhr,textStatus){
                 $("#result").html("Error")
@@ -104,8 +109,43 @@ $(document).ready(function(){
         })
     });
 
+    $("#patch").click(function(){
+      var patchval = $("."+tableclass).attr("value");
+      var data = JSON.stringify({
+                    id:$("#Patch_id").val(),
+                    name:$("#Patch_name").val(),
+                    author:$("#Patch_author").val()
+                  });
+        $.ajax({
+            url:"/api/patch/"+patchval,
+            type:'PATCH',
+            timeout:5000,
+            dataType:'json',
+            contentType: "application/json",
+            data:data,
+            success:function(data,textStatus,jqXHR){
+              $("."+tableclass+" td:nth-child(1)").text(data.id);
+              $("."+tableclass+" td:nth-child(2)").text(data.name);
+              $("."+tableclass+" td:nth-child(3)").text(data.author);
+              selectId = data.id;
+              selectName = data.name;
+              selectAuthor = data.author;
+            },
+            error:function(xhr,textStatus){
+                $("#result").html("Error")
+            }
+        })
+    });
+
+
     $('#modalAdd').on('shown.bs.modal', function() {
-        $('#id').focus();
+        $('#Add_id').focus();
+    });
+
+    $('#modalPatch').on('shown.bs.modal', function() {
+        $('#Patch_id').val(selectId);
+        $('#Patch_name').val(selectName);
+        $('#Patch_author').val(selectAuthor);
     });
 
 <<<<<<< HEAD

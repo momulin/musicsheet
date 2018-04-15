@@ -2,6 +2,7 @@ require('./config/config');
 const path = require('path');
 const express = require('express');
 const {MusicSheet} = require('./models/musicsheet');
+const _ = require('lodash');
 var {mongoose} = require('./db/mongoose');
 var bodyParser = require('body-parser');
 var favicon = require('serve-favicon');
@@ -33,9 +34,21 @@ router.route('/add').post((req,res)=>{
   });
 });
 
+router.route('/patch/:id').patch((req,res)=>{
+  var _id = mongoose.Types.ObjectId(req.params.id);
+  var body = _.pick(req.body,['id','name','author']);
+
+  MusicSheet.findByIdAndUpdate(_id,{$set: body},{new:true}).then((data)=>{
+    if(!data){
+      return res.status(404).send();
+    }
+    res.send(data);
+  }).catch((e)=>res.status(404).send());
+});
+
 router.route('/delete/:id').delete((req,res)=>{
-  var id = mongoose.Types.ObjectId(req.params.id);
-  MusicSheet.findByIdAndRemove(id).then((data)=>{
+  var _id = mongoose.Types.ObjectId(req.params.id);
+  MusicSheet.findByIdAndRemove(_id).then((data)=>{
     if(!data){
         return res.status(404).send();
     }

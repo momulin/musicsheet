@@ -86,7 +86,7 @@
                <div class="ml-auto">
                 <!-- <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button> -->
                 <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalAdd">Add</button>
-                <!-- <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" id="">Edit</button> -->
+                <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalPatch">Edit</button>
                 <button class="btn btn-outline-danger navbar-btn mt-2 float-right" data-toggle="modal" data-target="#modalDel" id="">Delete</button>
               </div>
 >>>>>>> 57c01c5... remake delete
@@ -174,9 +174,9 @@
         <h4 class="modal-title">Add New Sheet</h4>
       </div>
       <div class="modal-body">
-          <input id="id" class="form-control" type="text" placeholder="songid"/>
-          <input id="name" class="form-control" type="text" placeholder="songname"/>
-          <input id="author" class="form-control" type="text" placeholder="author"/>
+          <input id="Add_id" class="form-control" type="text" placeholder="songid"/>
+          <input id="Add_name" class="form-control" type="text" placeholder="songname"/>
+          <input id="Add_author" class="form-control" type="text" placeholder="author"/>
       </div>
       <div class="modal-footer">
         <button id="post" type="submit" class="btn btn-outline-primary" data-dismiss="modal">Add</button>
@@ -207,7 +207,33 @@
 </div>
 </div>
 
+<<<<<<< HEAD
 >>>>>>> dd49d3d... remake delete
+=======
+<!-- Patch Modal -->
+<div id="modalPatch" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form class="prevent-form">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Sheet</h4>
+      </div>
+      <div class="modal-body">
+          <input id="Patch_id" class="form-control" type="text" placeholder="songid"/>
+          <input id="Patch_name" class="form-control" type="text" placeholder="songname"/>
+          <input id="Patch_author" class="form-control" type="text" placeholder="author"/>
+      </div>
+      <div class="modal-footer">
+        <button id="patch" type="submit" class="btn btn-outline-primary" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+      </div>
+     </form>
+    </div>
+  </div>
+</div>
+
+>>>>>>> 4db2473... Add Patch route and UI
 
 
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
