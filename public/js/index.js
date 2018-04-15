@@ -6,16 +6,10 @@ var selectId,selectName,selectAuthor;
 var additem = function(items){
   var tr = $('<tr></tr>');
   tr.attr('value',items._id);
-  // tr.attr('id',items._id);
-  // var del = $("<button class='btn btn-outline-primary'>delete</button>");
-  // del.attr('value',items._id).attr('id','delete');
-  // del.click(deleteitem);
   tr.append($("<td></td>").text(items.id));
   tr.append($("<td></td>").text(items.name));
   tr.append($("<td></td>").text(items.author));
   tr.click(addTrClass);
-  // tr.append(`<td>${items.id}</td><td>${items.name}</td><td>${items.author}</td>`);
-  // tr.append($("<td></td>").append(del));
   $("#result").append(tr);
 };
 
@@ -49,23 +43,6 @@ $(document).ready(function(){
         })
     })
 
-    // $("#getAll").click(function(){
-    //     $.ajax({
-    //         url:'/api/find',
-    //         type:'GET',
-    //         timeout:5000,
-    //         dataType:'json',
-    //         success:function(data){
-    //         $("#result").empty();
-    //         for (var i = 0; i < data.length; i++) {
-    //           additem(data[i]);
-    //         }
-    //         },
-    //         error:function(){
-    //             $("#result").html('0 result')
-    //         }
-    //     })
-    // })
 //POST方法
     $("#post").click(function(){
       var data = JSON.stringify({
@@ -143,6 +120,7 @@ $(document).ready(function(){
     });
 
     $('#modalPatch').on('shown.bs.modal', function() {
+        $('#Patch_id').focus();
         $('#Patch_id').val(selectId);
         $('#Patch_name').val(selectName);
         $('#Patch_author').val(selectAuthor);

@@ -46,7 +46,12 @@
     </div>
 =======
     <!-- navbar -->
+<<<<<<< HEAD
       <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+=======
+<<<<<<< HEAD
+      <nav class="navbar navbar-expand-sm fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+>>>>>>> 11f9b6a... UI change
 
 <<<<<<< HEAD
         <div class="navbar-header">
@@ -68,6 +73,13 @@
             <button class="btn btn-outline-primary mr-1 mt-2" id="get" type="submit">Find</button>
             <input class="form-control-sm mt-2" style="width:50%" id="findname" name="name" type="text" placeholder="songname"/>
           <!-- </form> -->
+=======
+      <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+          <form class="prevent-form">
+            <button class="mt-2" type="submit" id="get" style="border:none; outline:none; background-color: #e3f2fd;"><img src="/img/search.gif"></button>
+            <input class="form-control-sm mt-2" id="findname" name="name" type="text" placeholder="songname"/>
+          </form>
+>>>>>>> c7f18f7... UI change
         <!-- </div> -->
         <button class="navbar-toggler ml-auto float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 >>>>>>> 7ede93a... bug fix
@@ -84,10 +96,10 @@
                 <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get">Search</button>
 =======
                <div class="ml-auto">
-                <!-- <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button> -->
-                <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalAdd">Add</button>
+                <button class="btn btn-outline-primary navbar-btn mt-2 float-right" data-toggle="modal" data-target="#modalAdd">Add</button>
                 <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalPatch">Edit</button>
-                <button class="btn btn-outline-danger navbar-btn mt-2 float-right" data-toggle="modal" data-target="#modalDel" id="">Delete</button>
+                <button class="btn btn-outline-danger navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalDel" id="">Delete</button>
+
               </div>
 >>>>>>> 57c01c5... remake delete
             </div>
@@ -124,9 +136,6 @@
           <th>Id</th>
           <th>SongName</th>
           <th>Author</th>
-          <!-- <th>
-               <button class="btn btn-secondary float-right" id="">Del</button>
-          </th> -->
         </tr>
       </thead>
       <tbody id="result"></tbody>
@@ -233,9 +242,12 @@
   </div>
 </div>
 
+<<<<<<< HEAD
 >>>>>>> 4db2473... Add Patch route and UI
 
 
+=======
+>>>>>>> 99a4a79... UI change
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
     <script src="/js/libs/bootstrap/js/bootstrap.min.js"></script>
     <script src="/js/index.js"></script>
