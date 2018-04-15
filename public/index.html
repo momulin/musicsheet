@@ -22,6 +22,7 @@
   <title>Music Sheet</title>
 </head>
   <body>
+<<<<<<< HEAD
       <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -43,6 +44,17 @@
       </div>
      </form>
     </div>
+=======
+    <!-- navbar -->
+      <nav class="navbar navbar-expand-lg fixed-bottom navbar-light" style="background-color: #e3f2fd;">
+
+        <div class="navbar-header">
+          <form class="form-inline prevent-form">
+            <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get" type="submit">Search</button>
+            <input class="form-control-sm mr-2 mt-2" id="findname" name="name" type="text" placeholder="songname"/>
+          </form>
+        </div>
+>>>>>>> dd49d3d... remake delete
 
 <<<<<<< HEAD
   </div>
@@ -52,6 +64,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<<<<<<< HEAD
                 <input class="form-control mr-2 mt-2" id="findname" name="name" type="text" placeholder="songname"/>
 <<<<<<< HEAD
 =======
@@ -59,11 +72,20 @@
 >>>>>>> 3325595... Add prevent form
                 <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button>
                 <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get">Search</button>
+=======
+               <div class="ml-auto">
+                <!-- <button class="btn btn-outline-primary float-right mr-2 mt-2" id="getAll">All</button> -->
+                <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#modalAdd">Add</button>
+                <!-- <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" id="">Edit</button> -->
+                <button class="btn btn-outline-danger navbar-btn mt-2 float-right" data-toggle="modal" data-target="#modalDel" id="">Delete</button>
+              </div>
+>>>>>>> 57c01c5... remake delete
             </div>
       </nav>
 >>>>>>> edad4cf... Add prevent form
 
 <!-- table -->
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   <div style="overflow-x:auto;">
@@ -73,18 +95,28 @@
     <table class="table table-fixed">
 >>>>>>> 33337c8... table view fixed
 =======
+=======
+>>>>>>> dd49d3d... remake delete
   <div style="overflow-x:auto; margin-bottom:50px;">
     <table class="table table-fixed">
 =======
     <table class="table table-hover" >
 >>>>>>> 8be5c45... add table hover
+<<<<<<< HEAD
 >>>>>>> 5eaa477... add table hover
+=======
+=======
+    <table class="table" >
+>>>>>>> 57c01c5... remake delete
+>>>>>>> dd49d3d... remake delete
       <thead>
         <tr id="floattable">
           <th>Id</th>
           <th>SongName</th>
           <th>Author</th>
-          <th></th>
+          <!-- <th>
+               <button class="btn btn-secondary float-right" id="">Del</button>
+          </th> -->
         </tr>
       </thead>
       <tbody id="result"></tbody>
@@ -95,6 +127,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #e3f2fd;">
     <button class="btn btn-outline-primary navbar-btn mr-2 mt-2" data-toggle="modal" data-target="#myModal">Add</button>
 
+<<<<<<< HEAD
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -104,6 +137,67 @@
             <button class="btn btn-outline-primary float-right mr-2 mt-2" id="get">Search</button>
         </div>
   </nav>
+=======
+<<<<<<< HEAD
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+<!-- Modal content-->
+<div class="modal-content">
+  <form>
+  <div class="modal-header">
+    <h4 class="modal-title">Add New Sheet</h4>
+  </div>
+  <div class="modal-body">
+      <input id="id" class="form-control" type="text" placeholder="songid"/>
+      <input id="name" class="form-control" type="text" placeholder="songname"/>
+      <input id="author" class="form-control" type="text" placeholder="author"/>
+=======
+  <!-- Add Modal -->
+<div id="modalAdd" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <form class="prevent-form">
+      <div class="modal-header">
+        <h4 class="modal-title">Add New Sheet</h4>
+      </div>
+      <div class="modal-body">
+          <input id="id" class="form-control" type="text" placeholder="songid"/>
+          <input id="name" class="form-control" type="text" placeholder="songname"/>
+          <input id="author" class="form-control" type="text" placeholder="author"/>
+      </div>
+      <div class="modal-footer">
+        <button id="post" type="submit" class="btn btn-outline-primary" data-dismiss="modal">Add</button>
+        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+      </div>
+     </form>
+    </div>
+>>>>>>> 57c01c5... remake delete
+  </div>
+</div>
+
+<!-- Del Modal -->
+<div id="modalDel" class="modal fade" role="dialog">
+<div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Delete data</h4>
+    </div>
+    <div class="modal-body">
+        <h4 class="modal-title">你確定要刪除這筆資料嗎？</h4>
+    </div>
+    <div class="modal-footer">
+      <button id="delete" class="btn btn-outline-primary" data-dismiss="modal">Confirm</button>
+      <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>
+</div>
+
+>>>>>>> dd49d3d... remake delete
 
 
     <script src="/js/libs/jquery-3.3.1.min.js"></script>
