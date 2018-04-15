@@ -16,8 +16,14 @@ bot.on('message', function(event) {
   console.log(event);
 =======
 bot.on('message', function (event) {
+<<<<<<< HEAD:server/linebot/bot.js
   var text = event.message.text;
 request('./../api/find/'+text, function (error, response, body) {
+=======
+  var text = encodeURI(event.message.text);
+  console.log(event.message.text);
+request('https://afternoon-stream-99518.herokuapp.com/api/find/'+text, function (error, response, body) {
+>>>>>>> 552c303... linebot edit:server/router/bot.js
   if(!error){
     event.reply(body.id).then(function (data) {
       
