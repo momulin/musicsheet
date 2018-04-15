@@ -1,39 +1,12 @@
-require('./config/config');
-const path = require('path');
 const express = require('express');
-<<<<<<< HEAD
-const {MusicSheet} = require('./models/musicsheet');
-<<<<<<< HEAD
-=======
-const {botrouter} = require('./linebot/bot');
->>>>>>> da31b86... Add line bot
-const _ = require('lodash');
-var {mongoose} = require('./db/mongoose');
+const {MusicSheet} = require('./../models/musicsheet');
 var bodyParser = require('body-parser');
-=======
+const _ = require('lodash');
+var {mongoose} = require('./../db/mongoose');
 
-const {botrouter} = require('./router/bot');
-const {apirouter} = require('./router/api');
-
-
->>>>>>> cca7acd... router edit
-var favicon = require('serve-favicon');
-var app = express();
-
-const publicpath = path.join(__dirname,'../public');
 var router = express.Router();
-var port = process.env.PORT || 3000;
 
-<<<<<<< HEAD
-app.use(bodyParser.json());
-<<<<<<< HEAD
-app.use(favicon(publicpath + "/img/favicon.ico"));
-=======
-=======
->>>>>>> 66835c8... router edit
-app.use(favicon(publicpath + "/img/icons/favicon.ico"));
->>>>>>> eb964b0... add icon image
-app.use(express.static(publicpath));
+router.use(bodyParser.json());
 
 router.route('/add').post((req,res)=>{
   var musicsheet = new MusicSheet({
@@ -92,10 +65,4 @@ router.route('/find/:name').get((req,res)=>{
   }).catch((e)=>res.status(404).send());
 });
 
-
-
-app.use('/api',router);
-
-app.listen(port,()=>{
-  console.log('Started up at '+port);
-});
+module.exports.apirouter = router;
