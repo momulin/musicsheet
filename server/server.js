@@ -12,7 +12,11 @@ var router = express.Router();
 var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+<<<<<<< HEAD
 app.use(favicon(publicpath + "/img/favicon.ico"));
+=======
+app.use(favicon(publicpath + "/img/icons/favicon.ico"));
+>>>>>>> eb964b0... add icon image
 app.use(express.static(publicpath));
 
 router.route('/add').post((req,res)=>{
