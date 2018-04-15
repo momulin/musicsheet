@@ -116,10 +116,16 @@ $(document).ready(function(){
 
 
     $('#modalAdd').on('shown.bs.modal', function() {
+      if(selectId == ""){
+        $(this).modal('hide');
+      }
         $('#Add_id').focus();
     });
 
     $('#modalPatch').on('shown.bs.modal', function() {
+      if(selectId == ""){
+        $(this).modal('hide');
+      }
         $('#Patch_id').focus();
         $('#Patch_id').val(selectId);
         $('#Patch_name').val(selectName);
