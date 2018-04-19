@@ -1,9 +1,10 @@
-var linebot = require('linebot');
-var express = require('express');
-var request = require('request');
+const linebot = require('linebot');
+const express = require('express');
+const request = require('request');
 
 var router = express.Router();
 const app = express();
+const linebotParser = bot.parser();
 
 var bot = linebot({
   channelId: process.env.ChannelId,
@@ -16,7 +17,7 @@ bot.on('message', function (event) {
   var reqURL = process.env.Domain_URL + "api/find/" + text;
 
 request(reqURL, function (error, response, body) {
-  if(!error && response.statusCode==200){
+  if(!error && response==200){
     var object = JSON.parse(body);
     var resMessage = "";
     for(var index in object) {
@@ -34,7 +35,7 @@ request(reqURL, function (error, response, body) {
 });
 
 
-const linebotParser = bot.parser();
+
 router.post('/', linebotParser);
 
 module.exports.botrouter = router;
